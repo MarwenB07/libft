@@ -6,12 +6,13 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 14:53:31 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/02 10:52:00 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/02 17:13:35 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <time.h>
+#include <stdio.h>
+#include <string.h>
 
 /*
 ** Description de la fonction : ft_strlcat
@@ -26,6 +27,42 @@
 **
 */
 
-size_t	strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
+/* REGLE STRLCAT :
+**
+** dstsize = 0 / src + dstsize
+** dstsize <= dst / src + dstsize
+** Dstsize > dst < dst + src / dst + src + concatene jusqu'a dstsize
+** Sinan taille est + src
+**
+*/
+
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
+	size_t i;
+
+	i = ft_strlen(dst) + 1;
+	if (dstsize == 0 || dstsize <= ft_strlen(dst))
+		return (ft_strlen(src) + dstsize);
+	while (i < dstsize)
+	{
+		dst[i] = src[i];	
+	}
+	return (ft_strlen(dst));
+}
+
+int main()
+{
+	char v1[20] = "coucou";
+	char v2[20] = "marwen";
+	int i = 12;
+	int a;
+	int l;
+
+	a = strlcat(v1, v2, i);
+	printf("%s %d", v1, a);
+	l  = ft_strlcat(v1, v2, i);
+	printf("%s %d", v1, l);
+
+
+
 }

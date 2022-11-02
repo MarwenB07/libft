@@ -6,7 +6,7 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 20:15:56 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/02 10:56:11 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/02 16:44:05 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 // Les Librairies //
 
-# include "libft.h"
-# include <stddef.h>
-# include <stdint.h>
+#include "libft.h"
+#include <stdlib.h>
+#include <unistd.h>
 
 // Structure //
 
@@ -40,17 +40,18 @@ void	ft_putstr(const char *s);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(const char *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
+void 	*calloc(size_t count, size_t size);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 
 // size_t //
 
 size_t	ft_strlen(char *s);
-size_t	strlcat(char *restrict dst, const char *restrict src, size_t dstsize);
+size_t	strlcat(char *dst, const char *src, size_t dsts);
 
 // int //
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n);
+int		ft_memcmp(const void *o1, const void *s2, size_t n);
 int		ft_strncmp(char *s1, char *s2, unsigned int n);
 int		ft_atoi(const char *str);
 int		ft_strcmp(char *s1, char *s2);
