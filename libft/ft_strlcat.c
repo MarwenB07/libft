@@ -6,7 +6,7 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 14:53:31 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/03 07:23:16 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/05 09:30:14 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,30 +39,36 @@
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t i;
-
-	i = ft_strlen(dst) + 1;
+	size_t j;
 	if (dstsize == 0 || dstsize <= ft_strlen(dst))
 		return (ft_strlen(src) + dstsize);
-	while (i < dstsize)
+	i = ft_strlen(dst);
+	j = 0;
+	while (src[j] != 0 && i + 1 < dstsize)
 	{
-		dst[i] = src[i];	
+		dst[i] = src[j++];
+		i++;
 	}
-	return (ft_strlen(dst) + 1);
+	dst[i] = '\0';
+	return (ft_strlen(dst) + ft_strlen(&src[j]));
 }
 
+// main //
+
+/*
 int main()
 {
 	char v1[20] = "coucou";
-	char v2[20] = "marwen";
+	const char v2[20] = "marwen";
 	int i = 12;
 	int a;
 	int l;
+	char s1[20] = "coucou";
+	const char s2[20] = "marwen";
 
 	l  = ft_strlcat(v1, v2, i);
 	printf("Mon ft_strlcat = %s %d\n", v1, l);
-	a = strlcat(v1, v2, i);
-	printf("Le vrai strlcat : %s %d\n", v1, a);
-
-
-
+	a = strlcat(s1, s2, i);
+	printf("Le vrai strlcat : %s %d\n", s1, a);
 }
+*/

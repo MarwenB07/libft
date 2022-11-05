@@ -5,12 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 13:58:03 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/02 14:32:50 by mbouaza          ###   ########.fr       */
+/*   Created: 2022/11/03 17:08:56 by mbouaza           #+#    #+#             */
+/*   Updated: 2022/11/04 08:29:28 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 /*
 ** Description de la fonction : ft_calloc
@@ -22,17 +23,12 @@
 // char = 1 //
 // int = 4 //
 
-void *calloc(size_t count, size_t size)
+void *ft_calloc(size_t count, size_t size)
 {
 	char *str;
-	size_t i;
 
-	i = 0;
-	str = malloc((1 + count) * size);
-	if(!(str == malloc((1 + count) * size)))
-	while ((1 - count) > i)
-	{
-		str[i] = 0;
-		i++;
-	}
+	if (!(str = malloc(count * size)))
+		return (NULL);
+	ft_bzero(str, count * size);
+	return (str);
 }

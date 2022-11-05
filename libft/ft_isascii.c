@@ -6,17 +6,19 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 21:26:25 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/10/31 21:28:01 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/04 09:07:15 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Description de la fonction : ft_isascii()
+** Description of : ft_isascii()
 **
-** Verifie si un caractere fais
-** partie de la table ascii.
+** The isascii() function tests for an ASCII character, 
+** which is any character between 0 and octal 0177 inclusive.
+**
+** Who is python ??
 **
 */
 

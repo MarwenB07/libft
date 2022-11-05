@@ -6,7 +6,7 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 14:40:58 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/01 14:50:07 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/05 10:35:14 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 
 /*
-** Description de la fonction : ft_substr
+** Description of : ft_substr
 **
 ** Alloue (avec malloc(3)) et retourne une chaîne de
 ** caractères issue de la chaîne ’s’.
@@ -26,19 +26,24 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
+	size_t end;
 	char	*newchaine;
 
-	if (s == NULL)
-		return (NULL);
-	if (start > ft_strlen(s))
-		return (NULL);
-	if (!(newchaine == (char *)malloc(sizeof(char) * (len + 1))))
-		return (NULL);
 	i = 0;
-	while (s[start] && i < len)
+	if (!s)
+		return (0);
+	end = len - start;
+	i = ft_strlen(s);
+	newchaine = malloc(sizeof(char) * (end + 1));
+	if (!newchaine)
+		return (0);
+	end = 0;
+	while (start < len)
 	{
-		newchaine[i++] = s[start++];
+		newchaine[end] = s[start];
+		end++;
+		start++;
 	}
-	newchaine[i] = '\0';
-	return (newchaine);
+	newchaine[start] = '\0';
+	return (0);
 }

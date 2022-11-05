@@ -6,7 +6,7 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 08:17:36 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/03 08:35:53 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/04 08:54:31 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,12 @@ void	*ft_memset(void *b, int c, size_t len)
 	{
 		((char *)b)[i++] = c;
 	}
+	return (b);
 }
 
 // main //
 
-/*:w
+/*
 int main()
 {
 	char c[10];

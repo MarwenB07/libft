@@ -1,43 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 15:11:06 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/04 10:57:36 by mbouaza          ###   ########.fr       */
+/*   Created: 2022/11/04 11:47:09 by mbouaza           #+#    #+#             */
+/*   Updated: 2022/11/05 09:49:46 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
-
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	int		len;
-	int 	len2;
-	char	*newstr;
-
-	len = ft_strlen(s1) + ft_strlen(s2);
-	len2 = 0;
-	if(!(newstr = (char *)malloc(sizeof(char) * (len + 1))))
-		return (0);
-	len = 0;
-	while (s1[len2])
-		newstr[len++] = s1[len2++];
-	len2 = 0;
-	while (s2[len2])
-		newstr[len++] = s2[len2++];
-	newstr[len] = '\0';
-	return (newstr);
-}
-
-// main //
+#include <stdlib.h>
 
 /*
-int main()
-{
-	
-}
+** Description of : ft_strmapi
+**
+** DESCRIPTION*
+**
 */
+
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	char *str;
+	size_t i;
+
+	i = 0;
+	str = ft_strdup(s);
+	if (str == NULL || s == NULL)
+		return (0);
+	while (s[i])
+	{
+		str[i] = f((unsigned int)i, str[i]);
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
+}

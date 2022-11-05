@@ -6,7 +6,7 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 08:01:20 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/02 08:55:58 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/05 12:41:07 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,13 @@
 #include <stdlib.h>
 
 /*
-** Description de la fonction : ft_memmove
+** Description of : ft_memmove
 **
-** La fonction memmove() copie len octets de la chaîne src vers la chaîne dst.
-** Les deux chaînes peuvent se chevaucher ;
-** la copie se fait toujours de manière non destructive la zone mémoire dst.
-** Si dst et src se chevauchent, le comportement est indéfini.
-** Applications dans lesquelles dst et src pourrait se chevaucher 
-** devrait utiliser memmove(3) à la place.
+** The memmove() function copies len bytes from string src to string dst.
+** The two strings may overlap;
+** the copy is always done in a non-destructive manner.
+**
+** Ouhooo !!!
 **
 */
 
@@ -32,12 +31,23 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	size_t	i;
 
 	i = 0;
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	while (len > i)
+	if ((unsigned char *)dst == NULL || (const unsigned char *)src == NULL)
+		return (NULL); 
+	if ((unsigned char *)dst > (const unsigned char *)src)
 	{
-		((int *)dst)[i] = ((int *)src)[i];
-		i++;
+		while (i < len)
+		{
+			((unsigned char *)dst)[i] = ((const unsigned char *)src)[i];
+			i++;
+		}
+	}
+	else
+	{
+		while (len > i)
+		{
+			((unsigned char *)dst)[len] = ((const unsigned char *)src)[len];
+			len--;
+		}
 	}
 	return (dst);
 }
@@ -59,6 +69,5 @@ int main()
 	i++;
 	}
 	return (0);
-
 }
 */

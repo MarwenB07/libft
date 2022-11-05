@@ -6,7 +6,7 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 07:24:06 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/03 08:15:02 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/04 07:42:12 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,36 +15,38 @@
 #include <stdio.h>
 
 /*
-** Description de la fonction : ft_strlcpy
+** Description of : ft_strlcpy
 **
-** La fonction strlcpy() copie jusqu'à taille - 1 
-** caractères de la chaîne src terminée par NUL vers dst,
-** terminant le résultat par NUL.
+** strlcpy() copies up to dstsize - 1 
+** characters from the string src to dst,
+** NUL-terminating the result if dstsize is not 0.
+**
+** 'The One piece is real !!!' : Edward Newgate.
 **
 */
 
 size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t i;
-	size_t j;
-
 
 	i = 0;
-	if (ft_strlen(src) == 0)
+	if (dstsize > 0)
 	{
-		dst[i] = '\0';
-		return (0);
-	}
-	while (i < dstsize && src[i])
-	{
-		if (dstsize > i)
+		while (i < (dstsize - 1) && src[i])
+		{
 			dst[i] = src[i];
-		i++;
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	j = i;
+	while (src[i])
+		i++;
 	return (i);
 }
 
+// main //
+
+/*
 int main()
 {
 	char dst[15] = "et ouiiijcjcjcjcjc";
@@ -54,6 +56,5 @@ int main()
 
 	a = ft_strlcpy(dst, src, i);
 	printf("%s et %d", dst, a);
-
-
 }
+*/

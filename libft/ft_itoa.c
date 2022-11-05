@@ -6,18 +6,20 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 22:07:58 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/10/31 22:19:35 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/04 09:42:19 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 #include "libft.h"
 
 /*
-** Description de la fonction : ft_itoa
+** Description of : ft_itoa
 **
-** Transforme des nombre int,
-** en chaine de nombre char.
+** ft_atoi but with int to char
+**
+** read Berserk ! 
 **
 */
 
@@ -43,11 +45,14 @@ char	*ft_itoa(int nbr)
 {
 	char	*str;
 	long	n;
+	int i;
 
+	i = 0;
 	n = nbr;
-	if (!(str == (char *)malloc(sizeof(char) * (ft_len(n) + 1))))
+	str = NULL;
+	if (!(str == (char *)malloc(sizeof(char) * (ft_len(n)))))
 		return (0);
-	str[i--] = '\0';
+	str[ft_len(n) + 1] = '\0';
 	if (nbr == 0)
 	{
 		str[0] = 48;
@@ -66,3 +71,12 @@ char	*ft_itoa(int nbr)
 	}
 	return (str);
 }
+
+/*
+int main()
+{
+	int a;
+	a = 8256;
+	printf("%s", ft_itoa(a));
+}
+*/

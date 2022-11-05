@@ -6,16 +6,14 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 08:48:25 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/03 08:56:47 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/04 07:27:53 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
 #include <string.h>
 #include <stdio.h>
-*/
 
 /*
 ** Description de la fonction : ft_strchr
@@ -27,22 +25,24 @@
 **
 */
 
-char	*ft_strchr(const char *src, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
 	i = 0;
-	if (src[i] == '\0' || c  > 127 || c < 0)
+	if (c  > 127 || c < 0)
 		return (0);
-	while (src[i])
+	while (s[i])
 	{
-		if (src[i] == c)
+		if (s[i] == c)
 		{
-			return (src[i]);
+			return (&((char *)s)[i]);
 		}
 		i++;
 	}
-	return (0);
+	if (s[i] == (char)c)
+		return (&((char *)s)[i]);
+	return (NULL);
 }
 
 // main //
