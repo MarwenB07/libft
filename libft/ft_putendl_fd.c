@@ -6,7 +6,7 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 20:24:58 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/04 08:00:56 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/06 13:16:53 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 
 void	ft_putendl_fd(char const *s, int fd)
 {
-	int i;
-	char n;
+	int		i;
+	char	n;
 
 	i = 0;
 	n = '\n';
@@ -38,7 +38,9 @@ void	ft_putendl_fd(char const *s, int fd)
 	}
 }
 
+/*
 int main()
 {
 	ft_putendl_fd("bonjour", 0);
 }
+*/

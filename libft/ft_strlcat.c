@@ -6,7 +6,7 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 14:53:31 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/05 09:30:14 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/06 12:51:17 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,20 @@
 /*
 ** Description de la fonction : ft_strlcat
 **
-** strlcat() ajoute la chaîne src à la fin de dst.
-** Il ajoutera au plus dstsize - strlen(dst) -
-** 1 caractères. Il se terminera alors par NUL,
-** à moins que dstsize ne soit 0 ou que la chaîne dst d'origine ait été
-** plus long que dstsize (en pratique, cela ne devrait 
-** pas se produire car cela signifie que soit dstsize est
-** incorrect ou que dst n'est pas une chaîne correcte).
-**
-*/
-
-/* REGLE STRLCAT :
-**
-** dstsize = 0 / src + dstsize
-** dstsize <= dst / src + dstsize
-** Dstsize > dst < dst + src / dst + src + concatene jusqu'a dstsize
-** Sinan taille est + src
+** appends string src to the end of dst.  
+** It will append at most dstsize - strlen(dst) - 1 characters.
+** It will then NUL-terminate, unless dstsize is 0 or the original 
+** dst string was longer than dstsize 
+** (in practice this should not happen as it means that
+** either dstsize is incorrect or that dst is not a proper string).
 **
 */
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
+
 	if (dstsize == 0 || dstsize <= ft_strlen(dst))
 		return (ft_strlen(src) + dstsize);
 	i = ft_strlen(dst);

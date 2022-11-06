@@ -6,7 +6,7 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 17:08:56 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/04 08:29:28 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/06 12:41:50 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 
 /*
-** Description de la fonction : ft_calloc
+** Description of : ft_calloc
 **
 ** malloc mais en + safe.
 **
@@ -23,11 +23,12 @@
 // char = 1 //
 // int = 4 //
 
-void *ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	char *str;
+	char	*str;
 
-	if (!(str = malloc(count * size)))
+	str = malloc(count * size);
+	if (!str)
 		return (NULL);
 	ft_bzero(str, count * size);
 	return (str);

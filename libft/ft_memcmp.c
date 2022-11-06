@@ -6,7 +6,7 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 09:26:42 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/06 11:45:07 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/06 12:52:45 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 #include "libft.h"
 
 /*
-** Description de la fonction : ft_memcmp
+** Description of : ft_memcmp
 **
-** La fonction memcmp() compare la chaîne d'octets s1 à la chaîne d'octets s2.
-** Les deux chaînes sont supposées avoir une longueur de n octets.
+** compares byte string s1 against byte string s2.
+** Both strings are assumed to be n bytes long.
 **
 */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t	i;
 

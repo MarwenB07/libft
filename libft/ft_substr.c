@@ -6,12 +6,13 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 14:40:58 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/05 10:35:14 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/06 16:57:57 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /*
 ** Description of : ft_substr
@@ -25,25 +26,35 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	size_t end;
-	char	*newchaine;
+	size_t i;
+	size_t j;
+	char *str;
 
 	i = 0;
+	j = 0;
 	if (!s)
 		return (0);
-	end = len - start;
-	i = ft_strlen(s);
-	newchaine = malloc(sizeof(char) * (end + 1));
-	if (!newchaine)
-		return (0);
-	end = 0;
-	while (start < len)
+	str = malloc(sizeof(char) * len + 1);
+	if (!str)
+		return (NULL);
+	while (s[i])
 	{
-		newchaine[end] = s[start];
-		end++;
-		start++;
+		if (i >= start && j < len)
+		{
+			str[j] = s[i];
+			j++;
+		}
+		i++;
 	}
-	newchaine[start] = '\0';
-	return (0);
+	str[j] = '\0';
+	return (str);
 }
+
+/*
+int main()
+{
+	char *str = "i just want this part ############";
+
+	printf("%s\n", ft_substr(str, 5, 20));
+}
+*/

@@ -6,7 +6,7 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 11:47:09 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/06 11:18:21 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/06 12:46:23 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@
 **
 */
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char *str;
-	size_t i;
+	char	*str;
+	size_t	i;
 
 	i = 0;
 	if (!s)

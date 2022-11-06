@@ -6,7 +6,7 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 15:11:06 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/06 11:38:39 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/06 12:47:43 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		len;
-	int 	len2;
+	int		len2;
 	char	*newstr;
 
 	if (!s1 || !s2)

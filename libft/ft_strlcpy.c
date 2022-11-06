@@ -6,7 +6,7 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 07:24:06 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/04 07:42:12 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/06 14:18:46 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@
 **
 */
 
-size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (dstsize > 0)
@@ -49,7 +49,7 @@ size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
 /*
 int main()
 {
-	char dst[15] = "et ouiiijcjcjcjcjc";
+	char dst[15] = "et oui";
 	const char src[] = "j";
 	size_t i = 6;
 	size_t a = 0;

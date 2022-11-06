@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 20:23:57 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/06 14:17:06 by mbouaza          ###   ########.fr       */
+/*   Created: 2022/11/06 17:41:46 by mbouaza           #+#    #+#             */
+/*   Updated: 2022/11/06 18:53:29 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
 /*
-** Description of : ft_putstr_fd
+** Description of : ft_striteri
 **
-** ft_putstr but with file descriptor.
-**
-** Yuji solo...
+** DESCRIPTION*
 **
 */
 
-void	ft_putstr_fd(const char *s, int fd)
+void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	i;
+	size_t i;
 
 	i = 0;
-	if (s != NULL)
+
+	if (s)
 	{
 		while (s[i])
 		{
-			ft_putchar_fd(s[i], fd);
+			f((unsigned int)i, s + i);
 			i++;
 		}
 	}
