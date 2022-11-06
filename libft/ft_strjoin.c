@@ -6,7 +6,7 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 15:11:06 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/04 10:57:36 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/06 11:38:39 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int 	len2;
 	char	*newstr;
 
+	if (!s1 || !s2)
+		return (0);
 	len = ft_strlen(s1) + ft_strlen(s2);
 	len2 = 0;
-	if(!(newstr = (char *)malloc(sizeof(char) * (len + 1))))
+	newstr = (char *)malloc(sizeof(char) * (len + 1));
+	if (!newstr)
 		return (0);
 	len = 0;
 	while (s1[len2])

@@ -6,7 +6,7 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 09:26:42 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/04 09:35:21 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/06 11:45:07 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,25 +22,19 @@
 **
 */
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
-{
-	size_t i;
-	char *tm1;
-	char *tm2;
+#include "libft.h"
 
-	tm1 = (char *)s1;
-	tm2 = (char *)s2;
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	size_t	i;
+
 	i = 0;
-	while ((tm1[i] || tm2[i]) && i < n)
-    {
-        if (!ft_isascii(tm1[i]) || !ft_isascii(tm2[i]))
-            i++;
-        if ((tm1[i] > tm2[i]) || !tm2[i])
-            return (1);
-        if ((tm1[i] < tm2[i]) || !tm1[i])
-            return (-1);
-        i++;
-    }
+	while (i < n)
+	{
+		if (((unsigned char *)s1)[i] != ((unsigned char *)s2)[i])
+			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
+		i++;
+	}
 	return (0);
 }
 

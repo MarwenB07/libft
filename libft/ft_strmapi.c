@@ -6,7 +6,7 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 11:47:09 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/05 09:49:46 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/06 11:18:21 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t i;
 
 	i = 0;
+	if (!s)
+		return (0);
 	str = ft_strdup(s);
-	if (str == NULL || s == NULL)
+	if (!str)
 		return (0);
 	while (s[i])
 	{

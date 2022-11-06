@@ -6,7 +6,7 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 22:07:58 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/04 09:42:19 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/06 11:55:16 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,11 @@
 **
 */
 
-int	ft_len(long nbr)
+#include <stdlib.h>
+#include "libft.h"
+#include <stdio.h>
+
+static int	ft_len(long nbr)
 {
 	int	len;
 
@@ -41,23 +45,26 @@ int	ft_len(long nbr)
 	return (len);
 }
 
+static char	*ft_return_str_0_(char *str)
+{
+	str[0] = 48;
+	return (str);
+}
+
 char	*ft_itoa(int nbr)
 {
 	char	*str;
 	long	n;
-	int i;
+	int		i;
 
-	i = 0;
 	n = nbr;
-	str = NULL;
-	if (!(str == (char *)malloc(sizeof(char) * (ft_len(n)))))
+	i = ft_len(n);
+	str = malloc(sizeof(char) * (i + 1));
+	if (!str)
 		return (0);
-	str[ft_len(n) + 1] = '\0';
+	str[i--] = '\0';
 	if (nbr == 0)
-	{
-		str[0] = 48;
-		return (str);
-	}
+		ft_return_str_0_(str);
 	if (nbr < 0)
 	{
 		n = n * -1;
