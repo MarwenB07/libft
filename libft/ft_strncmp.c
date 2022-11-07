@@ -6,22 +6,25 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 10:27:35 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/04 09:29:36 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/07 08:49:25 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Description de la fonction : ft_strncmp
+** Description of : ft_strncmp
 **
-** ft_strcmp mais a une taille designer 'n'
+** The strcmp() and strncmp() functions lexicographically 
+** compare the null-terminated strings s1 and s2.
+**
+** What is that melody ! : Sigma
 **
 */
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while ((s1[i] || s2[i]) && n > i)

@@ -5,34 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 10:42:26 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/06 11:17:13 by mbouaza          ###   ########.fr       */
+/*   Created: 2022/11/07 08:53:31 by mbouaza           #+#    #+#             */
+/*   Updated: 2022/11/07 11:31:12 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
 #include "libft.h"
+#include <stdio.h>
 
 /*
 ** Description of : ft_strtrim
 **
-** Alloue (avec malloc(3)) et retourne une copie de
-** la chaîne ’s1’, sans les caractères spécifiés
-** dans ’set’ au début et à la fin de la chaîne de
-** caractères.
+** Allocates (with malloc(3)) and returns a copy of
+** ’s1’ with the characters specified in ’set’ removed
+** from the beginning and the end of the string.
 **
+** EZ !!
 */
 
-/*
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-}
+	size_t	i;
+	size_t	j;
 
-
-int main()
-{
-	char const *n = "**oui**"; 
-	printf("%s", ft_strtrim(n, "*o"));
+	i = 0;
+	if (set == NULL || s1 == NULL)
+		return (0);
+	while (s1[i] && ft_strchr(set, s1[i]))
+		i++;
+	j = ft_strlen(s1);
+	while (j && ft_strrchr(set, s1[j]))
+		j--;
+	j = (j - i) + 1;
+	return (ft_substr(s1, i, j));
 }
-*/

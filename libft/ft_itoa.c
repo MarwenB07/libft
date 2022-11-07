@@ -6,7 +6,7 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 22:07:58 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/06 12:39:12 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/07 08:20:19 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 **
 ** ft_atoi but with int to char
 **
-** read Berserk ! 
+** S/O Mdoumi
 **
 */
 
@@ -45,12 +45,6 @@ static int	ft_len(long nbr)
 	return (len);
 }
 
-static char	*ft_return_str_0_(char *str)
-{
-	str[0] = 48;
-	return (str);
-}
-
 char	*ft_itoa(int nbr)
 {
 	char	*str;
@@ -59,12 +53,12 @@ char	*ft_itoa(int nbr)
 
 	n = nbr;
 	i = ft_len(n);
+	if (nbr == 0)
+		return (ft_strdup("0"));
 	str = malloc(sizeof(char) * (i + 1));
 	if (!str)
 		return (0);
 	str[i--] = '\0';
-	if (nbr == 0)
-		ft_return_str_0_(str);
 	if (nbr < 0)
 	{
 		n = n * -1;
@@ -76,7 +70,6 @@ char	*ft_itoa(int nbr)
 		n = n / 10;
 		i--;
 	}
-	str = ft_strdup(str);
 	return (str);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 08:17:36 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/04 08:54:31 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/07 08:22:01 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,18 @@
 */
 
 /*
-** Description de la fonction : ft_memset
+** Description of : ft_memset
 **
-** La fonction memset() écrit len octets de valeur c
-** (convertis en un caractère non signé) dans la chaîne b.
+** writes len bytes of value c (converted to an unsigned char)
+** to the string b.
+**
+** Read Berserk !!!!
 **
 */
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < len)

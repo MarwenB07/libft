@@ -6,7 +6,7 @@
 /*   By: mbouaza <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 08:48:25 by mbouaza           #+#    #+#             */
-/*   Updated: 2022/11/04 07:27:53 by mbouaza          ###   ########.fr       */
+/*   Updated: 2022/11/07 09:49:37 by mbouaza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 #include <stdio.h>
 
 /*
-** Description de la fonction : ft_strchr
+** Description of : ft_strchr
 **
-** La fonction strchr() localise la première occurrence de c
-** (converti en char) dans la chaîne pointée par s.
-** Le caractère nul de fin est considéré faire partie de la chaîne;
-** donc si c est `\0', les fonctions localisent le `\0' final.
-**
+**The strchr() function locates the first occurrence of c 
+** (converted to a char) in the string pointed to by s.
+** The terminating null character is considered to be part 
+** of the string; therefore if c is `\0', 
+** the functions locate the te:wqrminating `\0'.
 */
 
 char	*ft_strchr(const char *s, int c)
@@ -30,8 +30,10 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	if (c  > 127 || c < 0)
-		return (0);
+	if (c > 256)
+	{
+		c = c - 256;
+	}
 	while (s[i])
 	{
 		if (s[i] == c)
@@ -41,21 +43,6 @@ char	*ft_strchr(const char *s, int c)
 		i++;
 	}
 	if (s[i] == (char)c)
-		return (&((char *)s)[i]);
+		return ((char *)s + i);
 	return (NULL);
 }
-
-// main //
- 
-/*
-int main()
-{
-	int c;
-	const char str[] = "bonjour a tous !";
-
-	c = 'a';
-	printf("str de base = %s\n\n", str);
-	printf("int c = 'a'\n");
-	printf("ft_strchr = %c\n", ft_strchr(str, c));
-}
-*/
